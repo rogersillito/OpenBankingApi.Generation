@@ -45,11 +45,12 @@ namespace OpenBankingApi.Controllers
             string x_fapi_interaction_id = null, DateTimeOffset? fromBookingDateTime = null,
             DateTimeOffset? toBookingDateTime = null, string x_customer_user_agent = null)
         {
-            return new Task<OBReadTransaction4>(() =>
+            var task = new Task<OBReadTransaction4>(() =>
             {
                 return new OBReadTransaction4();
-
             });
+            task.Start();
+            return task;
         }
     }
 }
