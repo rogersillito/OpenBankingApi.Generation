@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="OpenBankingApi.Client_DEFAULT_NAMING.cs" />
+    <Compile Remove="OpenBankingApi.Client_v1SNAKE_CASED.cs" />
+    <Compile Remove="OpenBankingApi.Client_v2PARENT-CONTEXTUALIZED_CONCATENATED.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="newtonsoft.json" Version="12.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
