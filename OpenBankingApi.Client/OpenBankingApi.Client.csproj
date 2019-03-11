@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Client_DEFAULT_NAMING.cs" />
+    <Compile Remove="Client_v1SNAKE_CASED.cs" />
+    <Compile Remove="Client_v2PARENT-CONTEXTUALIZED_CONCATENATED.cs" />
     <Compile Remove="OpenBankingApi.Client_DEFAULT_NAMING.cs" />
     <Compile Remove="OpenBankingApi.Client_v1SNAKE_CASED.cs" />
     <Compile Remove="OpenBankingApi.Client_v2PARENT-CONTEXTUALIZED_CONCATENATED.cs" />

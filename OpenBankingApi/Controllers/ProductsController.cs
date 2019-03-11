@@ -6,6 +6,7 @@ using System.Web.Http;
 
 namespace ProductsApp.Controllers
 {
+    [System.Web.Http.RoutePrefix("testapi")]
     public class ProductsController : ApiController
     {
         Product[] products = new Product[] 
@@ -20,6 +21,7 @@ namespace ProductsApp.Controllers
             return products;
         }
 
+        [Route("products/{id}")]
         public IHttpActionResult GetProduct(int id)
         {
             var product = products.FirstOrDefault((p) => p.Id == id);
