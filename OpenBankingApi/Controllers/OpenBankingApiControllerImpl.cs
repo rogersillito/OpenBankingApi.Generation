@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace OpenBankingApi.Controllers
 {
-    public class OpenBankingApiControllerImpl: IController
+    public class OpenBankingApiControllerImpl: IOpenBankingApiController
     {
         public Task<OBReadAccount3> GetAccountsAsync(string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null,
             string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, string x_customer_user_agent = null)

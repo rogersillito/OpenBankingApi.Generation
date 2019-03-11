@@ -9,7 +9,7 @@ namespace OpenBankingApi.Controllers
     #pragma warning disable
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.0.14.0 (NJsonSchema v9.13.18.0 (Newtonsoft.Json v11.0.0.0))")]
-    public interface IController
+    public interface IOpenBankingApiController
     {
         /// <summary>Get Accounts</summary>
         /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
@@ -105,11 +105,11 @@ namespace OpenBankingApi.Controllers
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.0.14.0 (NJsonSchema v9.13.18.0 (Newtonsoft.Json v11.0.0.0))")]
     [System.Web.Http.RoutePrefix("open-banking/v3.1/aisp")]
-    public partial class Controller : System.Web.Http.ApiController
+    public partial class OpenBankingApiController : System.Web.Http.ApiController
     {
-        private IController _implementation;
+        private IOpenBankingApiController _implementation;
     
-        public Controller(IController implementation)
+        public OpenBankingApiController(IOpenBankingApiController implementation)
         {
             _implementation = implementation;
         }

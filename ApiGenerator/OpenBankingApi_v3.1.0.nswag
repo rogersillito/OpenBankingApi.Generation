@@ -89,7 +89,7 @@
       "useCancellationToken": false,
       "aspNetNamespace": "System.Web.Http",
       "routeNamingStrategy": "None",
-      "className": "{controller}",
+      "className": "OpenBankingApi{controller}",
       "operationGenerationMode": "MultipleClientsFromOperationId",
       "additionalNamespaceUsages": [],
       "additionalContractNamespaceUsages": [],
@@ -133,7 +133,7 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "../OpenBankingApi/Controllers/OpenBankingApi.cs"
+      "output": "../OpenBankingApi/Controllers/OpenBankingApiController.cs"
     }
   }
 }
