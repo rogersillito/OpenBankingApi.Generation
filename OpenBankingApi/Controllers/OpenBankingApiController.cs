@@ -125,7 +125,7 @@ namespace OpenBankingApi.Controllers
         /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
         /// <returns>Accounts Read</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("accounts", Name = "GetAccounts")]
-        public System.Threading.Tasks.Task<OBReadAccount3> GetAccounts(string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null, string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, string x_customer_user_agent = null)
+        public System.Threading.Tasks.Task<OBReadAccount3> GetAccounts([FromHeader(Name = "x-fapi-financial-id")] string x_fapi_financial_id, [FromHeader] string authorization, [FromHeader(Name = "x-fapi-customer-last-logged-time")] string x_fapi_customer_last_logged_time = null, [FromHeader(Name = "x-fapi-customer-ip-address")] string x_fapi_customer_ip_address = null, [FromHeader(Name = "x-fapi-interaction-id")] string x_fapi_interaction_id = null, [FromHeader(Name = "x-customer-user-agent")] string x_customer_user_agent = null)
         {
             return _implementation.GetAccountsAsync(x_fapi_financial_id, authorization, x_fapi_customer_last_logged_time, x_fapi_customer_ip_address, x_fapi_interaction_id, x_customer_user_agent);
         }
@@ -142,7 +142,7 @@ namespace OpenBankingApi.Controllers
         /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
         /// <returns>Accounts Read</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("accounts/{AccountId}", Name = "GetAccountsAccountId")]
-        public System.Threading.Tasks.Task<OBReadAccount3> GetAccountsAccountId(string accountId, string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null, string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, string x_customer_user_agent = null)
+        public System.Threading.Tasks.Task<OBReadAccount3> GetAccountsAccountId(string accountId, [FromHeader(Name = "x-fapi-financial-id")] string x_fapi_financial_id, [FromHeader] string authorization, [FromHeader(Name = "x-fapi-customer-last-logged-time")] string x_fapi_customer_last_logged_time = null, [FromHeader(Name = "x-fapi-customer-ip-address")] string x_fapi_customer_ip_address = null, [FromHeader(Name = "x-fapi-interaction-id")] string x_fapi_interaction_id = null, [FromHeader(Name = "x-customer-user-agent")] string x_customer_user_agent = null)
         {
             return _implementation.GetAccountsAccountIdAsync(accountId, x_fapi_financial_id, authorization, x_fapi_customer_last_logged_time, x_fapi_customer_ip_address, x_fapi_interaction_id, x_customer_user_agent);
         }
@@ -159,7 +159,7 @@ namespace OpenBankingApi.Controllers
         /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
         /// <returns>Balances Read</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("accounts/{AccountId}/balances", Name = "GetAccountsAccountIdBalances")]
-        public System.Threading.Tasks.Task<OBReadBalance1> GetAccountsAccountIdBalances(string accountId, string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null, string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, string x_customer_user_agent = null)
+        public System.Threading.Tasks.Task<OBReadBalance1> GetAccountsAccountIdBalances(string accountId, [FromHeader(Name = "x-fapi-financial-id")] string x_fapi_financial_id, [FromHeader] string authorization, [FromHeader(Name = "x-fapi-customer-last-logged-time")] string x_fapi_customer_last_logged_time = null, [FromHeader(Name = "x-fapi-customer-ip-address")] string x_fapi_customer_ip_address = null, [FromHeader(Name = "x-fapi-interaction-id")] string x_fapi_interaction_id = null, [FromHeader(Name = "x-customer-user-agent")] string x_customer_user_agent = null)
         {
             return _implementation.GetAccountsAccountIdBalancesAsync(accountId, x_fapi_financial_id, authorization, x_fapi_customer_last_logged_time, x_fapi_customer_ip_address, x_fapi_interaction_id, x_customer_user_agent);
         }
@@ -182,7 +182,7 @@ namespace OpenBankingApi.Controllers
         /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
         /// <returns>Statements Read</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("accounts/{AccountId}/statements", Name = "GetAccountsAccountIdStatements")]
-        public System.Threading.Tasks.Task<OBReadStatement1> GetAccountsAccountIdStatements(string accountId, string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null, string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, System.DateTimeOffset? fromStatementDateTime = null, System.DateTimeOffset? toStatementDateTime = null, string x_customer_user_agent = null)
+        public System.Threading.Tasks.Task<OBReadStatement1> GetAccountsAccountIdStatements(string accountId, [FromHeader(Name = "x-fapi-financial-id")] string x_fapi_financial_id, [FromHeader] string authorization, [FromHeader(Name = "x-fapi-customer-last-logged-time")] string x_fapi_customer_last_logged_time = null, [FromHeader(Name = "x-fapi-customer-ip-address")] string x_fapi_customer_ip_address = null, [FromHeader(Name = "x-fapi-interaction-id")] string x_fapi_interaction_id = null, System.DateTimeOffset? fromStatementDateTime = null, System.DateTimeOffset? toStatementDateTime = null, [FromHeader(Name = "x-customer-user-agent")] string x_customer_user_agent = null)
         {
             return _implementation.GetAccountsAccountIdStatementsAsync(accountId, x_fapi_financial_id, authorization, x_fapi_customer_last_logged_time, x_fapi_customer_ip_address, x_fapi_interaction_id, fromStatementDateTime, toStatementDateTime, x_customer_user_agent);
         }
@@ -200,7 +200,7 @@ namespace OpenBankingApi.Controllers
         /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
         /// <returns>Statements Read</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("accounts/{AccountId}/statements/{StatementId}", Name = "GetAccountsAccountIdStatementsStatementId")]
-        public System.Threading.Tasks.Task<OBReadStatement1> GetAccountsAccountIdStatementsStatementId(string statementId, string accountId, string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null, string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, string x_customer_user_agent = null)
+        public System.Threading.Tasks.Task<OBReadStatement1> GetAccountsAccountIdStatementsStatementId(string statementId, string accountId, [FromHeader(Name = "x-fapi-financial-id")] string x_fapi_financial_id, [FromHeader] string authorization, [FromHeader(Name = "x-fapi-customer-last-logged-time")] string x_fapi_customer_last_logged_time = null, [FromHeader(Name = "x-fapi-customer-ip-address")] string x_fapi_customer_ip_address = null, [FromHeader(Name = "x-fapi-interaction-id")] string x_fapi_interaction_id = null, [FromHeader(Name = "x-customer-user-agent")] string x_customer_user_agent = null)
         {
             return _implementation.GetAccountsAccountIdStatementsStatementIdAsync(statementId, accountId, x_fapi_financial_id, authorization, x_fapi_customer_last_logged_time, x_fapi_customer_ip_address, x_fapi_interaction_id, x_customer_user_agent);
         }
@@ -223,11 +223,64 @@ namespace OpenBankingApi.Controllers
         /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
         /// <returns>Transactions Read</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("accounts/{AccountId}/transactions", Name = "GetAccountsAccountIdTransactions")]
-        public System.Threading.Tasks.Task<OBReadTransaction4> GetAccountsAccountIdTransactions(string accountId, string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null, string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, System.DateTimeOffset? fromBookingDateTime = null, System.DateTimeOffset? toBookingDateTime = null, string x_customer_user_agent = null)
+        public System.Threading.Tasks.Task<OBReadTransaction4> GetAccountsAccountIdTransactions(string accountId, [FromHeader(Name = "x-fapi-financial-id")] string x_fapi_financial_id, [FromHeader] string authorization, [FromHeader(Name = "x-fapi-customer-last-logged-time")] string x_fapi_customer_last_logged_time = null, [FromHeader(Name = "x-fapi-customer-ip-address")] string x_fapi_customer_ip_address = null, [FromHeader(Name = "x-fapi-interaction-id")] string x_fapi_interaction_id = null, System.DateTimeOffset? fromBookingDateTime = null, System.DateTimeOffset? toBookingDateTime = null, [FromHeader(Name = "x-customer-user-agent")] string x_customer_user_agent = null)
         {
             return _implementation.GetAccountsAccountIdTransactionsAsync(accountId, x_fapi_financial_id, authorization, x_fapi_customer_last_logged_time, x_fapi_customer_ip_address, x_fapi_interaction_id, fromBookingDateTime, toBookingDateTime, x_customer_user_agent);
         }
     
+    }
+    
+    public class FromHeaderBinding : System.Web.Http.Controllers.HttpParameterBinding
+    {
+        private readonly string _name;
+
+        public FromHeaderBinding(System.Web.Http.Controllers.HttpParameterDescriptor parameter, string headerName)
+            : base(parameter)
+        {
+            if (string.IsNullOrEmpty(headerName)) throw new System.ArgumentNullException("headerName");
+            _name = headerName;
+        }
+
+        public override System.Threading.Tasks.Task ExecuteBindingAsync(System.Web.Http.Metadata.ModelMetadataProvider metadataProvider, System.Web.Http.Controllers.HttpActionContext actionContext, System.Threading.CancellationToken cancellationToken)
+        {
+            System.Collections.Generic.IEnumerable<string> values;
+            var isBound = false;
+            if (actionContext.Request.Headers.TryGetValues(_name, out values))
+            {
+                string tempVal = null;
+                foreach (var value in values)
+                {
+                    if (value != null)
+                    {
+                        tempVal = value;
+                        break;
+                    }
+                }
+                if (tempVal != null)
+                {
+                    var actionValue = System.Convert.ChangeType(tempVal, Descriptor.ParameterType);
+                    actionContext.ActionArguments[Descriptor.ParameterName] = actionValue;
+                    isBound = true;
+                }
+            }
+            if (!isBound && Descriptor.IsOptional)
+            {
+                actionContext.ActionArguments[Descriptor.ParameterName] = Descriptor.DefaultValue;
+            }
+            var taskSource = new System.Threading.Tasks.TaskCompletionSource<object>();
+            taskSource.SetResult(null);
+            return taskSource.Task;
+        }
+    }
+    
+    public class FromHeaderAttribute : System.Web.Http.ParameterBindingAttribute
+    {
+        public string Name { get; set; }
+    
+        public override System.Web.Http.Controllers.HttpParameterBinding GetBinding(System.Web.Http.Controllers.HttpParameterDescriptor parameter)
+        {
+            return new FromHeaderBinding(parameter, Name ?? parameter.ParameterName);
+        }
     }
     
     

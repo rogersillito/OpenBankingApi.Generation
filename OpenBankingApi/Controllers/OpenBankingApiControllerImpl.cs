@@ -8,7 +8,12 @@ namespace OpenBankingApi.Controllers
         public Task<OBReadAccount3> GetAccountsAsync(string x_fapi_financial_id, string authorization, string x_fapi_customer_last_logged_time = null,
             string x_fapi_customer_ip_address = null, string x_fapi_interaction_id = null, string x_customer_user_agent = null)
         {
-            throw new NotImplementedException();
+            var task = new Task<OBReadAccount3>(() =>
+            {
+                return new OBReadAccount3();
+            });
+            task.Start();
+            return task;
         }
 
         public Task<OBReadAccount3> GetAccountsAccountIdAsync(string accountId, string x_fapi_financial_id, string authorization,

@@ -1,4 +1,7 @@
-﻿using Owin;
+﻿using Microsoft.Owin;
+using Owin;
+using System;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace OpenBankingApi
@@ -15,6 +18,8 @@ namespace OpenBankingApi
                 //DependencyResolver = new UnityDependencyResolver(container)
             };
 
+            app.Use<GlobalExceptionMiddleware>();
+
             //config.Services.Replace(typeof(IHttpControllerSelector), new MyControllerSelector(config));
             //config.Services.Replace(typeof(IHttpActionSelector), new MyActionSelector());
             //config.Services.Replace(typeof(IExceptionLogger), new MyExceptionLogger());
@@ -28,11 +33,29 @@ namespace OpenBankingApi
             config.MapHttpAttributeRoutes();
         }
 
-//        private static void ConfigureContainer(IUnityContainer container)
-//        {
-//            container.RegisterType<IOpenBankingApiController, OpenBankingApiControllerImpl>();
-//        }
-//    }
+        public class GlobalExceptionMiddleware : OwinMiddleware
+        {
+            public GlobalExceptionMiddleware(OwinMiddleware next) : base(next)
+            { }
+
+            public override async Task Invoke(IOwinContext context)
+            {
+                try
+                {
+                    await Next.Invoke(context);
+                }
+                catch (Exception ex)
+                {
+                    // your handling logic
+                }
+            }
+        }
+
+        //        private static void ConfigureContainer(IUnityContainer container)
+        //        {
+        //            container.RegisterType<IOpenBankingApiController, OpenBankingApiControllerImpl>();
+        //        }
+        //    }
 
         //public class MyActionSelector : ApiControllerActionSelector
         //{
