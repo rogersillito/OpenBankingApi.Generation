@@ -451,6 +451,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <Content Include="OpenBankingApi_v3.1.0.nswag" />
+    <None Include="CoreTemplates\Controller.liquid" />
+    <None Include="OpenBankingApi_v3.1.0_CoreControllers.nswag" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

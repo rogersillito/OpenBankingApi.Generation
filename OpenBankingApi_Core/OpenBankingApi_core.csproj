@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <ProjectUISubcaption>&gt;= ASP.NET Core 2.2</ProjectUISubcaption>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>OpenBankingApi_core</RootNamespace>
+    <AssemblyName>OpenBankingApi_core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\OpenBankingApiController - Copy.cs" />
+    <Compile Remove="Controllers\OpenBankingApi_DEFAULT_NAMING.cs" />
+    <Compile Remove="Controllers\OpenBankingApi_v1SNAKE_CASED.cs" />
+    <Compile Remove="Controllers\OpenBankingApi_v2PARENT-CONTEXTUALIZED_CONCATENATED.cs" />
+    <Compile Remove="OpenBankingApi.Client.cs" />
+    <Compile Remove="OpenBankingApi.Client_DEFAULT_NAMING.cs" />
+    <Compile Remove="OpenBankingApi.Client_v1SNAKE_CASED.cs" />
+    <Compile Remove="OpenBankingApi.Client_v2PARENT-CONTEXTUALIZED_CONCATENATED.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>
