@@ -9,7 +9,7 @@ namespace ApiGenerator
     {
         static int Main(string[] args)
         {
-            OpenBankingToNmslSwaggerDocumentPreProcessor.ApplyToCommands();
+            OpenBankingSwaggerDocumentFilteringPreProcessor.ApplyToCommands();
 
             Console.Write("NSwag command line tool for .NET Core (with pre-processing!) " + RuntimeUtilities.CurrentRuntime + ", ");
             var processor = new NSwagCommandProcessor(new ConsoleHost());

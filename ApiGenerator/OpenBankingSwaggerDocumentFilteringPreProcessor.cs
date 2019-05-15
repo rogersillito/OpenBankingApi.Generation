@@ -6,11 +6,11 @@ using NSwag;
 
 namespace ApiGenerator
 {
-    public class OpenBankingToNmslSwaggerDocumentPreProcessor : IProcessSwaggerDocuments
+    public class OpenBankingSwaggerDocumentFilteringPreProcessor : IProcessSwaggerDocuments
     {
         public static void ApplyToCommands()
         {
-            var docPreProcessor = new OpenBankingToNmslSwaggerDocumentPreProcessor();
+            var docPreProcessor = new OpenBankingSwaggerDocumentFilteringPreProcessor();
             NSwagDocumentWithPreProcessing.SetDocumentPreProcessor(docPreProcessor);
             PreProcessedSwaggerToCSharpControllerCommand.SetDocumentPreProcessor(docPreProcessor);
             PreProcessedSwaggerToCSharpClientCommand.SetDocumentPreProcessor(docPreProcessor);

@@ -452,7 +452,7 @@
     <Compile Include="NSwagWrapper\Commands\Document\PreProcessedExecuteDocumentCommand.cs" />
     <Compile Include="NSwagWrapper\Commands\NSwagCommandProcessor.cs" />
     <Compile Include="NSwagWrapper\Commands\NSwagDocumentWithPreProcessing.cs" />
-    <Compile Include="OpenBankingToNmslSwaggerDocumentPreProcessor.cs" />
+    <Compile Include="OpenBankingSwaggerDocumentFilteringPreProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeNameGenerators\MyDefaultTypeNameGenerator.cs" />
