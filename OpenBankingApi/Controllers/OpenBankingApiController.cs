@@ -233,18 +233,17 @@ namespace OpenBankingApi.Controllers
     public class FromHeaderBinding : System.Web.Http.Controllers.HttpParameterBinding
     {
         private readonly string _name;
-
+    
         public FromHeaderBinding(System.Web.Http.Controllers.HttpParameterDescriptor parameter, string headerName)
             : base(parameter)
         {
             if (string.IsNullOrEmpty(headerName)) throw new System.ArgumentNullException("headerName");
             _name = headerName;
         }
-
+    
         public override System.Threading.Tasks.Task ExecuteBindingAsync(System.Web.Http.Metadata.ModelMetadataProvider metadataProvider, System.Web.Http.Controllers.HttpActionContext actionContext, System.Threading.CancellationToken cancellationToken)
         {
             System.Collections.Generic.IEnumerable<string> values;
-            var isBound = false;
             if (actionContext.Request.Headers.TryGetValues(_name, out values))
             {
                 string tempVal = null;
@@ -260,13 +259,9 @@ namespace OpenBankingApi.Controllers
                 {
                     var actionValue = System.Convert.ChangeType(tempVal, Descriptor.ParameterType);
                     actionContext.ActionArguments[Descriptor.ParameterName] = actionValue;
-                    isBound = true;
                 }
             }
-            if (!isBound && Descriptor.IsOptional)
-            {
-                actionContext.ActionArguments[Descriptor.ParameterName] = Descriptor.DefaultValue;
-            }
+    
             var taskSource = new System.Threading.Tasks.TaskCompletionSource<object>();
             taskSource.SetResult(null);
             return taskSource.Task;

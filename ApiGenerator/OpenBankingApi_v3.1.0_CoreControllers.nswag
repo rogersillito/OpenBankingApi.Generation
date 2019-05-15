@@ -12,8 +12,8 @@
     "swaggerToCSharpController": {
       "controllerBaseClass": "Microsoft.AspNetCore.Mvc.Controller",
       "controllerStyle": "Partial",
+      "controllerTarget": "AspNetCore",
       "useCancellationToken": false,
-      "aspNetNamespace": "Microsoft.AspNetCore.Mvc",
       "routeNamingStrategy": "OperationId",
       "className": "OpenBankingApi{controller}",
       "operationGenerationMode": "MultipleClientsFromOperationId",
@@ -47,6 +47,7 @@
       "generateDefaultValues": true,
       "generateDataAnnotations": true,
       "excludedTypeNames": [],
+      "excludedParameterNames": [],
       "handleReferences": false,
       "generateImmutableArrayProperties": false,
       "generateImmutableDictionaryProperties": false,

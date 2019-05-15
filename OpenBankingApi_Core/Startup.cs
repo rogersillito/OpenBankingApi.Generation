@@ -21,7 +21,10 @@ namespace OpenBankingApi_core
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IOpenBankingApiController, OpenBankingApiControllerImpl>();
+            services.AddScoped<IOpenBankingAccountsImplementor, OpenBankingAccountsService>();
+            services.AddScoped<IOpenBankingBalancesImplementor, OpenBankingBalancesService>();
+            services.AddScoped<IOpenBankingProductsImplementor, OpenBankingProductsService>();
+            services.AddScoped<IOpenBankingTransactionsImplementor, OpenBankingTransactionsService>();
 
             #region snippet_ConfigureApiBehaviorOptions
             services.AddMvc()

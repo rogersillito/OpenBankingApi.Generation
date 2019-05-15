@@ -23,9 +23,10 @@ namespace ApiGenerator
                 "/accounts",
                 "/accounts/{AccountId}",
                 "/accounts/{AccountId}/balances",
+                "/balances",
                 "/accounts/{AccountId}/transactions",
-                "/accounts/{AccountId}/statements",
-                "/accounts/{AccountId}/statements/{StatementId}"
+                "/accounts/{AccountId}/product",
+                "/products"
             };
 
             var pathItemKeys = document.Paths.Keys.OrderBy(k => k).ToList();
