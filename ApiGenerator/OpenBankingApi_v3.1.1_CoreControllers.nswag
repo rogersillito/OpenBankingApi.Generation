@@ -32,7 +32,7 @@
       "wrapResponseMethods": [],
       "generateResponseClasses": true,
       "responseClass": "SwaggerResponse",
-      "namespace": "OpenBankingApi_core.Controllers",
+      "namespace": "OpenBankingApi.NSwagGenerated.v3_1_1",
       "requiredPropertiesMustBeDefined": true,
       "dateType": "System.DateTimeOffset",
       "jsonConverters": null,
@@ -56,14 +56,14 @@
       "jsonSerializerSettingsTransformationMethod": null,
       "inlineNamedDictionaries": false,
       "inlineNamedTuples": true,
-      "generateDtoTypes": true,
+      "generateDtoTypes": false,
       "templateDirectory": "CoreTemplates",
       "typeNameGeneratorType": "ApiGenerator.TypeNameGenerators.ParentSchemaFallbackBasedTypeNameGenerator",
       "propertyNameGeneratorType": null,
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "../OpenBankingApi_core/Controllers/OpenBankingApiController.cs"
+      "output": "../OpenBankingApi_core/Controllers/NSwagGenerated/v3_1_1/OpenBankingApiControllers.cs"
     }
   }
 }

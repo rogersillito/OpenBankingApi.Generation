@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OpenBankingApi_core.Controllers;
+using OpenBankingApi.NSwagGenerated;
+using OpenBankingApi.Services;
 
 #region snippet_ApiControllerAttributeOnAssembly
 [assembly: ApiController]

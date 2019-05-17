@@ -4,15 +4,15 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <ProjectUISubcaption>&gt;= ASP.NET Core 2.2</ProjectUISubcaption>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>OpenBankingApi_core</RootNamespace>
+    <RootNamespace>OpenBankingApi</RootNamespace>
     <AssemblyName>OpenBankingApi_core</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\OpenBankingApiController - Copy.cs" />
-    <Compile Remove="Controllers\OpenBankingApi_DEFAULT_NAMING.cs" />
-    <Compile Remove="Controllers\OpenBankingApi_v1SNAKE_CASED.cs" />
-    <Compile Remove="Controllers\OpenBankingApi_v2PARENT-CONTEXTUALIZED_CONCATENATED.cs" />
+    <Compile Remove="Controllers\NSwagGenerated\OpenBankingApiController - Copy.cs" />
+    <Compile Remove="Controllers\NSwagGenerated\OpenBankingApi_DEFAULT_NAMING.cs" />
+    <Compile Remove="Controllers\NSwagGenerated\OpenBankingApi_v1SNAKE_CASED.cs" />
+    <Compile Remove="Controllers\NSwagGenerated\OpenBankingApi_v2PARENT-CONTEXTUALIZED_CONCATENATED.cs" />
     <Compile Remove="OpenBankingApi.Client.cs" />
     <Compile Remove="OpenBankingApi.Client_DEFAULT_NAMING.cs" />
     <Compile Remove="OpenBankingApi.Client_v1SNAKE_CASED.cs" />
@@ -21,6 +21,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenBankingApi.DTOs\OpenBankingApi.DTOs.csproj" />
   </ItemGroup>
 
 </Project>
