@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGenerator", "ApiGenerator\ApiGenerator.csproj", "{2FE76BA1-32B8-44AB-8DEE-411B1922C6C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenBankingApi", "OpenBankingApi\OpenBankingApi.csproj", "{2023B9DC-D0EE-4473-B223-A3ED15C37A1D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenBankingApi.ConsoleHost", "OpenBankingApi.ConsoleHost\OpenBankingApi.ConsoleHost.csproj", "{336866B3-31C3-43B1-8009-E80516082EF6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenBankingApi.Client", "OpenBankingApi.Client\OpenBankingApi.Client.csproj", "{D968093E-FB82-47E2-807A-8B27E45281E4}"
@@ -34,10 +32,6 @@ Global
 		{2FE76BA1-32B8-44AB-8DEE-411B1922C6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FE76BA1-32B8-44AB-8DEE-411B1922C6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FE76BA1-32B8-44AB-8DEE-411B1922C6C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2023B9DC-D0EE-4473-B223-A3ED15C37A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2023B9DC-D0EE-4473-B223-A3ED15C37A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2023B9DC-D0EE-4473-B223-A3ED15C37A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2023B9DC-D0EE-4473-B223-A3ED15C37A1D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{336866B3-31C3-43B1-8009-E80516082EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{336866B3-31C3-43B1-8009-E80516082EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{336866B3-31C3-43B1-8009-E80516082EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU

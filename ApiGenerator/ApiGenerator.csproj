@@ -460,9 +460,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="OpenBankingApi_v3.1.0.nswag" />
     <None Include="CoreTemplates\Controller.liquid" />
-    <None Include="OpenBankingApi_v3.1.0_CoreControllers.nswag" />
+    <None Include="OpenBankingApi_v3.1.1_Clients.nswag" />
     <None Include="OpenBankingApi_v3.1.1_CoreControllers.nswag" />
     <None Include="OpenBankingApi_v3.1.1_DTOs.nswag" />
     <None Include="packages.config" />
