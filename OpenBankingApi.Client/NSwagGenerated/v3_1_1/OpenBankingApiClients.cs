@@ -4,23 +4,79 @@
 // </auto-generated>
 //----------------------
 
-using OpenBankingApi.NSwagGenerated.v3_1_1;
-
 namespace OpenBankingApi.NSwagGenerated.v3_1_1
 {
     #pragma warning disable
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class AccountsClient 
+    public partial interface IAccountsClient
+    {
+        /// <summary>Get Accounts</summary>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Accounts Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<OBReadAccount3> AccountsGetAsync(string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent);
+    
+        /// <summary>Get Accounts</summary>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Accounts Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        System.Threading.Tasks.Task<OBReadAccount3> AccountsGetAsync(string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent, System.Threading.CancellationToken cancellationToken);
+    
+        /// <summary>Get Accounts</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Accounts Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<OBReadAccount3> AccountsGetAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent);
+    
+        /// <summary>Get Accounts</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Accounts Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        System.Threading.Tasks.Task<OBReadAccount3> AccountsGetAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent, System.Threading.CancellationToken cancellationToken);
+    
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
+    public partial class AccountsClient : OpenBankingApi.Client.ApiClientBase, IAccountsClient
     {
         private string _baseUrl = "";
-        private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public AccountsClient(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public AccountsClient(OpenBankingApi.Client.Configuration.IConfigureAnApiClient configuration) : base(configuration)
         {
-            BaseUrl = baseUrl; 
-            _httpClient = httpClient; 
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() => 
             {
                 var settings = new Newtonsoft.Json.JsonSerializerSettings();
@@ -75,7 +131,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/accounts");
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -255,7 +311,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/accounts/{AccountId}");
             urlBuilder_.Replace("{AccountId}", System.Uri.EscapeDataString(ConvertToString(accountId, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -427,16 +483,74 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class BalancesClient 
+    public partial interface IBalancesClient
+    {
+        /// <summary>Get Balances</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Balances Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<OBReadBalance1> BalancesGetAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent);
+    
+        /// <summary>Get Balances</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Balances Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        System.Threading.Tasks.Task<OBReadBalance1> BalancesGetAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent, System.Threading.CancellationToken cancellationToken);
+    
+        /// <summary>Get Balances</summary>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Balances Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<OBReadBalance1> BalancesGetAsync(string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent);
+    
+        /// <summary>Get Balances</summary>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Balances Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        System.Threading.Tasks.Task<OBReadBalance1> BalancesGetAsync(string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent, System.Threading.CancellationToken cancellationToken);
+    
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
+    public partial class BalancesClient : OpenBankingApi.Client.ApiClientBase, IBalancesClient
     {
         private string _baseUrl = "";
-        private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public BalancesClient(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public BalancesClient(OpenBankingApi.Client.Configuration.IConfigureAnApiClient configuration) : base(configuration)
         {
-            BaseUrl = baseUrl; 
-            _httpClient = httpClient; 
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() => 
             {
                 var settings = new Newtonsoft.Json.JsonSerializerSettings();
@@ -497,7 +611,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/accounts/{AccountId}/balances");
             urlBuilder_.Replace("{AccountId}", System.Uri.EscapeDataString(ConvertToString(accountId, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -665,7 +779,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/balances");
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -843,16 +957,74 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class ProductsClient 
+    public partial interface IProductsClient
+    {
+        /// <summary>Get Products</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Products Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<OBReadProduct2> ProductAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent);
+    
+        /// <summary>Get Products</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Products Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        System.Threading.Tasks.Task<OBReadProduct2> ProductAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent, System.Threading.CancellationToken cancellationToken);
+    
+        /// <summary>Get Products</summary>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Products Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<OBReadProduct2> ProductsAsync(string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent);
+    
+        /// <summary>Get Products</summary>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Products Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        System.Threading.Tasks.Task<OBReadProduct2> ProductsAsync(string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, string x_customer_user_agent, System.Threading.CancellationToken cancellationToken);
+    
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
+    public partial class ProductsClient : OpenBankingApi.Client.ApiClientBase, IProductsClient
     {
         private string _baseUrl = "";
-        private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public ProductsClient(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public ProductsClient(OpenBankingApi.Client.Configuration.IConfigureAnApiClient configuration) : base(configuration)
         {
-            BaseUrl = baseUrl; 
-            _httpClient = httpClient; 
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() => 
             {
                 var settings = new Newtonsoft.Json.JsonSerializerSettings();
@@ -913,7 +1085,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/accounts/{AccountId}/product");
             urlBuilder_.Replace("{AccountId}", System.Uri.EscapeDataString(ConvertToString(accountId, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1087,7 +1259,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/products");
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1265,16 +1437,59 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class TransactionsClient 
+    public partial interface ITransactionsClient
+    {
+        /// <summary>Get Transactions</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="fromBookingDateTime">The UTC ISO 8601 Date Time to filter transactions FROM
+        /// NB Time component is optional - set to 00:00:00 for just Date.
+        /// If the Date Time contains a timezone, the ASPSP must ignore the timezone component.</param>
+        /// <param name="toBookingDateTime">The UTC ISO 8601 Date Time to filter transactions TO
+        /// NB Time component is optional - set to 00:00:00 for just Date.
+        /// If the Date Time contains a timezone, the ASPSP must ignore the timezone component.</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Transactions Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<OBReadTransaction5> TransactionsAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, System.DateTimeOffset? fromBookingDateTime, System.DateTimeOffset? toBookingDateTime, string x_customer_user_agent);
+    
+        /// <summary>Get Transactions</summary>
+        /// <param name="accountId">AccountId</param>
+        /// <param name="x_fapi_financial_id">The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.</param>
+        /// <param name="x_fapi_customer_last_logged_time">The time when the PSU last logged in with the TPP. 
+        /// All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+        /// Sun, 10 Sep 2017 19:43:31 UTC</param>
+        /// <param name="x_fapi_customer_ip_address">The PSU's IP address if the PSU is currently logged in with the TPP.</param>
+        /// <param name="x_fapi_interaction_id">An RFC4122 UID used as a correlation id.</param>
+        /// <param name="authorization">An Authorisation Token as per https://tools.ietf.org/html/rfc6750</param>
+        /// <param name="fromBookingDateTime">The UTC ISO 8601 Date Time to filter transactions FROM
+        /// NB Time component is optional - set to 00:00:00 for just Date.
+        /// If the Date Time contains a timezone, the ASPSP must ignore the timezone component.</param>
+        /// <param name="toBookingDateTime">The UTC ISO 8601 Date Time to filter transactions TO
+        /// NB Time component is optional - set to 00:00:00 for just Date.
+        /// If the Date Time contains a timezone, the ASPSP must ignore the timezone component.</param>
+        /// <param name="x_customer_user_agent">Indicates the user-agent that the PSU is using.</param>
+        /// <returns>Transactions Read</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        System.Threading.Tasks.Task<OBReadTransaction5> TransactionsAsync(string accountId, string x_fapi_financial_id, string x_fapi_customer_last_logged_time, string x_fapi_customer_ip_address, string x_fapi_interaction_id, string authorization, System.DateTimeOffset? fromBookingDateTime, System.DateTimeOffset? toBookingDateTime, string x_customer_user_agent, System.Threading.CancellationToken cancellationToken);
+    
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
+    public partial class TransactionsClient : OpenBankingApi.Client.ApiClientBase, ITransactionsClient
     {
         private string _baseUrl = "";
-        private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public TransactionsClient(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public TransactionsClient(OpenBankingApi.Client.Configuration.IConfigureAnApiClient configuration) : base(configuration)
         {
-            BaseUrl = baseUrl; 
-            _httpClient = httpClient; 
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() => 
             {
                 var settings = new Newtonsoft.Json.JsonSerializerSettings();
@@ -1356,7 +1571,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             }
             urlBuilder_.Length--;
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1530,6 +1745,43 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
             }
         
             return System.Convert.ToString(value, cultureInfo);
+        }
+    }
+
+    
+
+    [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
+    public partial class SwaggerException : System.Exception
+    {
+        public int StatusCode { get; private set; }
+
+        public string Response { get; private set; }
+
+        public System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
+
+        public SwaggerException(string message, int statusCode, string response, System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException) 
+            : base(message + "\n\nStatus: " + statusCode + "\nResponse: \n" + response.Substring(0, response.Length >= 512 ? 512 : response.Length), innerException)
+        {
+            StatusCode = statusCode;
+            Response = response; 
+            Headers = headers;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("HTTP Response: \n\n{0}\n\n{1}", Response, base.ToString());
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.2.5.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
+    public partial class SwaggerException<TResult> : SwaggerException
+    {
+        public TResult Result { get; private set; }
+
+        public SwaggerException(string message, int statusCode, string response, System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception innerException) 
+            : base(message, statusCode, response, headers, innerException)
+        {
+            Result = result;
         }
     }
 
