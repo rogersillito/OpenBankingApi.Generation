@@ -5,11 +5,11 @@ using OpenBankingApi.Client.Configuration;
 
 namespace OpenBankingApi.Client
 {
-    public abstract class ApiClientBase
+    public abstract class ApiClient
     {
         private readonly IConfigureAnApiClient _configurator;
 
-        protected ApiClientBase(IConfigureAnApiClient configurator)
+        protected ApiClient(IConfigureAnApiClient configurator)
         {
             _configurator = configurator;
         }

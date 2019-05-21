@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 
 namespace OpenBankingApi.Client.Configuration
 {
-    public abstract class ClientConfiguratorBase : IConfigureAnApiClient
+    public abstract class ClientConfigurator : IConfigureAnApiClient
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        protected ClientConfiguratorBase(IHttpClientFactory httpClientFactory)
+        protected ClientConfigurator(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
