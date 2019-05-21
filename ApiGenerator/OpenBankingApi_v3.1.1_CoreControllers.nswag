@@ -10,7 +10,7 @@
   },
   "codeGenerators": {
     "swaggerToCSharpController": {
-      "controllerBaseClass": "Microsoft.AspNetCore.Mvc.Controller",
+      "controllerBaseClass": "Microsoft.AspNetCore.Mvc.ControllerBase",
       "controllerStyle": "Partial",
       "controllerTarget": "AspNetCore",
       "useCancellationToken": false,
