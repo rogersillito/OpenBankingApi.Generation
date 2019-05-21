@@ -10,7 +10,7 @@
   },
   "codeGenerators": {
     "swaggerToCSharpClient": {
-      "clientBaseClass": "OpenBankingApi.Client.ApiClientBase",
+      "clientBaseClass": "OpenBankingApi.Client.ApiClient",
       "configurationClass": "OpenBankingApi.Client.Configuration.IConfigureAnApiClient",
       "generateClientClasses": true,
       "generateClientInterfaces": true,

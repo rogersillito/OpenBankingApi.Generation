@@ -70,7 +70,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.3.0.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class AccountsClient : OpenBankingApi.Client.ApiClientBase, IAccountsClient
+    public partial class AccountsClient : OpenBankingApi.Client.ApiClient, IAccountsClient
     {
         private string _baseUrl = "";
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
@@ -544,7 +544,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.3.0.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class BalancesClient : OpenBankingApi.Client.ApiClientBase, IBalancesClient
+    public partial class BalancesClient : OpenBankingApi.Client.ApiClient, IBalancesClient
     {
         private string _baseUrl = "";
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
@@ -1018,7 +1018,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.3.0.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class ProductsClient : OpenBankingApi.Client.ApiClientBase, IProductsClient
+    public partial class ProductsClient : OpenBankingApi.Client.ApiClient, IProductsClient
     {
         private string _baseUrl = "";
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
@@ -1483,7 +1483,7 @@ namespace OpenBankingApi.NSwagGenerated.v3_1_1
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.3.0.0 (NJsonSchema v9.14.1.0 (Newtonsoft.Json v12.0.0.0))")]
-    public partial class TransactionsClient : OpenBankingApi.Client.ApiClientBase, ITransactionsClient
+    public partial class TransactionsClient : OpenBankingApi.Client.ApiClient, ITransactionsClient
     {
         private string _baseUrl = "";
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
