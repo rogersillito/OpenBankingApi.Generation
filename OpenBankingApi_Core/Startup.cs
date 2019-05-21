@@ -39,7 +39,10 @@ namespace OpenBankingApi_core
 
                     options.ClientErrorMapping[404].Link = 
                         "https://httpstatuses.com/404";
-                });
+                })
+                .AddJsonOptions(
+                    options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
             #endregion
         }
 
