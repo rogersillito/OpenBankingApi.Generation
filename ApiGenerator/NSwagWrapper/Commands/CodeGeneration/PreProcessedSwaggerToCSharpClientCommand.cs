@@ -21,6 +21,7 @@ namespace ApiGenerator.NSwagWrapper.Commands.CodeGeneration
     public class PreProcessedSwaggerToCSharpClientCommand : NSwag.Commands.CodeGeneration.SwaggerToCSharpClientCommand
     {
         private static IProcessSwaggerDocuments _preProcessor;
+        private IPrefixSourceCode _sourceCodePrefixer = new CSharpCodePrefixer();
 
         public static void SetDocumentPreProcessor(IProcessSwaggerDocuments processor) => _preProcessor = processor;
 
@@ -51,7 +52,7 @@ namespace ApiGenerator.NSwagWrapper.Commands.CodeGeneration
                 {
                     return new Dictionary<string, string>
                     {
-                        { OutputFilePath ?? "Full", clientGenerator.GenerateFile(ClientGeneratorOutputType.Full) }
+                        { OutputFilePath ?? "Full", _sourceCodePrefixer.AddPrefixTemplate(clientGenerator.GenerateFile(ClientGeneratorOutputType.Full)) }
                     };
                 }
             });
@@ -62,7 +63,7 @@ namespace ApiGenerator.NSwagWrapper.Commands.CodeGeneration
             var savedAdditionalNamespaceUsages = Settings.AdditionalNamespaceUsages?.ToArray();
             Settings.AdditionalNamespaceUsages =
                 Settings.AdditionalNamespaceUsages?.Concat(new[] { ContractsNamespace }).ToArray() ?? new[] { ContractsNamespace };
-            result[OutputFilePath ?? "Implementation"] = clientGenerator.GenerateFile(ClientGeneratorOutputType.Implementation);
+            result[OutputFilePath ?? "Implementation"] = _sourceCodePrefixer.AddPrefixTemplate(clientGenerator.GenerateFile(ClientGeneratorOutputType.Implementation));
             Settings.AdditionalNamespaceUsages = savedAdditionalNamespaceUsages;
         }
 
@@ -70,7 +71,7 @@ namespace ApiGenerator.NSwagWrapper.Commands.CodeGeneration
         {
             var savedNamespace = Settings.CSharpGeneratorSettings.Namespace;
             Settings.CSharpGeneratorSettings.Namespace = ContractsNamespace;
-            result[ContractsOutputFilePath ?? "Contracts"] = clientGenerator.GenerateFile(ClientGeneratorOutputType.Contracts);
+            result[ContractsOutputFilePath ?? "Contracts"] = _sourceCodePrefixer.AddPrefixTemplate(clientGenerator.GenerateFile(ClientGeneratorOutputType.Contracts));
             Settings.CSharpGeneratorSettings.Namespace = savedNamespace;
         }
     }

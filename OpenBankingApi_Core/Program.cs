@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace OpenBankingApi_core
+namespace OpenBankingApi
 {
     public class Program
     {

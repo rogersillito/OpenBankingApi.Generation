@@ -20,6 +20,7 @@ namespace ApiGenerator.NSwagWrapper.Commands.CodeGeneration
     public class PreProcessedSwaggerToCSharpControllerCommand : NSwag.Commands.CodeGeneration.SwaggerToCSharpControllerCommand
     {
         private static IProcessSwaggerDocuments _preProcessor;
+        private IPrefixSourceCode _sourceCodePrefixer = new CSharpCodePrefixer();
 
         public static void SetDocumentPreProcessor(IProcessSwaggerDocuments processor) => _preProcessor = processor;
 
@@ -37,7 +38,7 @@ namespace ApiGenerator.NSwagWrapper.Commands.CodeGeneration
                 var document = await GetInputSwaggerDocument().ConfigureAwait(false);
                 _preProcessor?.ApplyProcessing(document);
                 var clientGenerator = new SwaggerToCSharpControllerGenerator(document, Settings);
-                return clientGenerator.GenerateFile();
+                return _sourceCodePrefixer.AddPrefixTemplate(clientGenerator.GenerateFile());
             });
         }
     }

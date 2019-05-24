@@ -11,7 +11,6 @@ namespace ApiGenerator
         public static void ApplyToCommands()
         {
             var docPreProcessor = new OpenBankingSwaggerDocumentFilteringPreProcessor();
-            NSwagDocumentWithPreProcessing.SetDocumentPreProcessor(docPreProcessor);
             PreProcessedSwaggerToCSharpControllerCommand.SetDocumentPreProcessor(docPreProcessor);
             PreProcessedSwaggerToCSharpClientCommand.SetDocumentPreProcessor(docPreProcessor);
         }

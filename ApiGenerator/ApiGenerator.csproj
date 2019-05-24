@@ -452,6 +452,7 @@
     <Compile Include="NSwagWrapper\Commands\Document\PreProcessedExecuteDocumentCommand.cs" />
     <Compile Include="NSwagWrapper\Commands\NSwagCommandProcessor.cs" />
     <Compile Include="NSwagWrapper\Commands\NSwagDocumentWithPreProcessing.cs" />
+    <Compile Include="NSwagWrapper\CSharpCodePrefixer.cs" />
     <Compile Include="OpenBankingSwaggerDocumentFilteringPreProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -465,6 +466,9 @@
     <None Include="OpenBankingApi_v3.1.1_CoreControllers.nswag" />
     <None Include="OpenBankingApi_v3.1.1_DTOs.nswag" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FilePrefixTemplate.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

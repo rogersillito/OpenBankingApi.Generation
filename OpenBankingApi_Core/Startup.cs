@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -16,7 +15,7 @@ using OpenBankingApi.Services;
 
 #region snippet_ApiControllerAttributeOnAssembly
 [assembly: ApiController]
-namespace OpenBankingApi_core
+namespace OpenBankingApi
 {
     public class Startup
     {

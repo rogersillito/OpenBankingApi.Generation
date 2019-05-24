@@ -1,0 +1,7 @@
+﻿///////////////////////////////////////////////////////////////////////
+// WARNING: this file should not be manually changed.  It is generated
+// using the Open Banking swagger spec with the ApiGenerator.exe tool.
+// Any changes should be made to the underlying .nswag file and/or
+// liquid template before regenerating using the tool.
+///////////////////////////////////////////////////////////////////////
+

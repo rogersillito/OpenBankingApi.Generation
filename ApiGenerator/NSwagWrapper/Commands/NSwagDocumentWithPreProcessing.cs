@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NSwag.Commands;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiGenerator.NSwagWrapper.Commands.CodeGeneration;
 using NConsole;
 using NSwag.AssemblyLoader;
 using NSwag.Commands.CodeGeneration;
@@ -13,10 +14,12 @@ using NSwag.Commands.SwaggerGeneration.WebApi;
 namespace ApiGenerator.NSwagWrapper.Commands
 {
     public class NSwagDocumentWithPreProcessing: NSwagDocument
-    {
-        private static IProcessSwaggerDocuments _preProcessor;
-
-        public static void SetDocumentPreProcessor(IProcessSwaggerDocuments processor) => _preProcessor = processor;
+    { 
+        public NSwagDocumentWithPreProcessing()
+        {
+            CodeGenerators.SwaggerToCSharpClientCommand = new PreProcessedSwaggerToCSharpClientCommand();
+            CodeGenerators.SwaggerToCSharpControllerCommand = new PreProcessedSwaggerToCSharpControllerCommand();
+        }
  
         /// <summary>Loads an existing NSwagDocument with environment variable expansions and variables.</summary>
         /// <param name="filePath">The file path.</param>
@@ -35,7 +38,6 @@ namespace ApiGenerator.NSwagWrapper.Commands
         public override async Task<SwaggerDocumentExecutionResult> ExecuteAsync()
         {
             var document = await GenerateSwaggerDocumentAsync();
-            _preProcessor?.ApplyProcessing(document);
             foreach (var codeGenerator in CodeGenerators.Items.Where(c => !string.IsNullOrEmpty(c.OutputFilePath)))
             {
                 codeGenerator.Input = document;
